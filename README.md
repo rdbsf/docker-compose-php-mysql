@@ -3,7 +3,7 @@
 This setup is great for writing quick apps in PHP from an OSX machine. It uses Virtualbox and machine to create the actual environment and then uses compose to setup the application services
 
 
-### Install docker, compose, and machine
+### Install docker, compose, and machine (or Docker Toolbox)
 
 ```
 brew update
@@ -17,9 +17,9 @@ brew install docker docker-compose docker-machine
 ### Setup docker environment
 
 ```
-docker-machine create -d virtualbox dev
-docker-machine start dev
-eval $(docker-machine env dev)
+docker-machine create --driver virtualbox --virtualbox-memory "2048" --virtualbox-disk-size "10000" lemp
+docker-machine start lemp
+eval $(docker-machine env lemp)
 ```
 
 ### Build & Run!
